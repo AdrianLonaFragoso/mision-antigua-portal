@@ -1,34 +1,24 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Menu,
-  X,
-  Home,
-  Users,
-  Settings,
-  UserCheck,
-  Megaphone,
-  Phone,
-} from "lucide-react";
+import { useSectionNavigator } from "@/hooks/navigateToSection";
+import { Menu, X, Home, Users, UserCheck, Phone } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
+  const navigateToSection = useSectionNavigator(setIsOpen);
 
   const navItems = [
-    { id: "home", label: "Inicio", icon: Home },
-    { id: "about", label: "Nosotros", icon: Users },
-    { id: "services", label: "Servicios", icon: Settings },
-    { id: "board", label: "Mesa Directiva", icon: UserCheck },
-    { id: "announcements", label: "Avisos", icon: Megaphone },
-    { id: "contact", label: "Contacto", icon: Phone },
+    { id: "/#home", label: "Inicio", icon: Home },
+    { id: "/#about", label: "Nosotros", icon: Users },
+    { id: "/proyectos", label: "Proyectos", icon: Users },
+    { id: "/proveedores", label: "Proveedores", icon: Users },
+    // { id: "#services", label: "Servicios", icon: Settings },
+    { id: "#board", label: "Mesa Directiva", icon: UserCheck },
+    { id: "/reglamentos", label: "Reglamentos", icon: Users },
+
+    // { id: "#announcements", label: "Avisos", icon: Megaphone },
+    { id: "#contact", label: "Contacto", icon: Phone },
   ];
 
   return (
@@ -37,7 +27,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button onClick={() => scrollToSection("home")}>
+            <button onClick={() => navigateToSection("#home")}>
               <img
                 src="/logo-mision.png"
                 alt="Logo Misión Antigua"
@@ -52,7 +42,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => navigateToSection(item.id)}
                   className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md"
                 >
                   {item.label}
@@ -94,7 +84,7 @@ const Navigation = () => {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => navigateToSection(item.id)}
                     className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
                   >
                     <IconComponent className="mr-3 h-4 w-4" />
