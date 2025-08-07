@@ -15,7 +15,7 @@ const Navigation = () => {
     { id: "/proveedores", label: "Proveedores", icon: Users },
     // { id: "#services", label: "Servicios", icon: Settings },
     { id: "#board", label: "Mesa Directiva", icon: UserCheck },
-    { id: "/reglamentos", label: "Documentos", icon: Users },
+    { id: "/documentos", label: "Documentos", icon: Users },
 
     // { id: "#announcements", label: "Avisos", icon: Megaphone },
     { id: "#contact", label: "Contacto", icon: Phone },
