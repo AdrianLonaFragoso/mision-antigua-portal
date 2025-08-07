@@ -5,28 +5,28 @@ const BoardSection = () => {
   const boardMembers = [
     {
       position: "Presidente",
-      name: "Lic. Irma",
+      name: "Lic. Irma Aranda",
       email: "presidente@misionantigua.com",
       description:
         "Coordina las actividades generales de la comunidad y representa oficialmente al fraccionamiento.",
     },
     {
       position: "Secretario",
-      name: "Ing. Jesus",
+      name: "Ing. Jesus Ponce",
       email: "secretario@misionantigua.com",
       description:
         "Gestiona la documentación oficial y mantiene el registro de todas las sesiones del consejo.",
     },
     {
       position: "Tesorero",
-      name: "C.P. Sandra ",
+      name: "Arq. Olivia Rosales ",
       email: "tesorero@misionantigua.com",
       description:
         "Administra los recursos económicos y supervisa el cumplimiento del presupuesto comunitario.",
     },
     {
       position: "Vocal",
-      name: "Sr. Arturo Méndez",
+      name: "Ing. Alfredo Méndez",
       email: "arturo@misionantigua.com",
       description:
         "Apoyo a actividades varias de administración y vigilancia de actividades.",

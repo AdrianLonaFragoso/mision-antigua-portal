@@ -149,7 +149,7 @@ const Footer = () => {
             </div>
             <div className="flex space-x-6 text-sm">
               <a
-                href="#"
+                href="/aviso-de-privacidad"
                 className="text-primary-foreground/80 hover:text-white transition-colors duration-300"
               >
                 Política de Privacidad
@@ -161,7 +161,8 @@ const Footer = () => {
                 Términos de Uso
               </a>
               <a
-                href="#"
+                href="http://misionantigua.org/docs/REGLAMENTO_INTERNO_DEL_FRACCIONAMIENTO_MISION_ANTIGUA_RV_050825.pdf"
+                target="_blank"
                 className="text-primary-foreground/80 hover:text-white transition-colors duration-300"
               >
                 Reglamento Interno

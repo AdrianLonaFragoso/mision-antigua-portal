@@ -9,7 +9,7 @@ interface HeroSecondaryProps {
     onClick?: () => void;
     className?: string;
   };
-  secondaryButton: {
+  secondaryButton?: {
     text: string;
     onClick?: () => void;
     className?: string;
@@ -46,14 +46,16 @@ const HeroSecondary = ({
           >
             {primaryButton.text}
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={secondaryButton.onClick}
-            className={`border-primary bg-primary text-white hover:bg-white hover:text-primary transition-all duration-300 px-8 py-3 text-lg font-semibold ${secondaryButton.className}`}
-          >
-            {secondaryButton.text}
-          </Button>
+          {secondaryButton ? (
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={secondaryButton.onClick}
+              className={`border-primary bg-primary text-white hover:bg-white hover:text-primary transition-all duration-300 px-8 py-3 text-lg font-semibold ${secondaryButton.className}`}
+            >
+              {secondaryButton.text}
+            </Button>
+          ) : null}
         </div>
       </div>
     </section>
