@@ -16,6 +16,7 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -27,25 +28,59 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
+    try {
+      const response = await fetch(
+        "https://mision-antigua-back.vercel.app/api/contacts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            full_name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          }),
+        }
+      );
 
-    toast({
-      title: "Mensaje enviado",
-      description: "Gracias por contactarnos. Te responderemos pronto.",
-    });
+      if (!response.ok) {
+        throw new Error("Error al enviar el mensaje");
+      }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+      const data = await response.json();
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por contactarnos. Te responderemos pronto.",
+        variant: "default",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description:
+          "Ocurrió un error al enviar tu mensaje. Por favor intenta nuevamente.",
+        variant: "destructive",
+      });
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,7 +125,7 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 hidden">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
@@ -114,15 +149,15 @@ const ContactSection = () => {
                       Correo Electrónico
                     </h4>
                     <p className="text-muted-foreground">
-                      info@misionantigua.com
+                      administracion@misionantigua.com
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      administracion@misionantigua.com
+                      comunicacion@misionantigua.com
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 hidden">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
@@ -143,7 +178,7 @@ const ContactSection = () => {
             </div>
 
             {/* WhatsApp Button */}
-            <Card className="bg-green-50 border-green-200">
+            <Card className="bg-green-50 border-green-200 hidden">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4">
                   <div className="bg-green-100 p-3 rounded-lg">
@@ -265,12 +300,12 @@ const ContactSection = () => {
                     className="border-border focus:border-primary resize-none"
                   />
                 </div>
-
                 <Button
                   type="submit"
                   className="w-full bg-primary hover:bg-primary-dark text-primary-foreground font-semibold py-3"
+                  disabled={isSubmitting}
                 >
-                  Enviar Mensaje
+                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                 </Button>
               </form>
             </CardContent>

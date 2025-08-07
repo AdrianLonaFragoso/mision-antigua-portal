@@ -133,7 +133,7 @@ const AnnouncementsSection = () => {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="text-center">
+        <div className="text-center hidden">
           <Card className="bg-gradient-to-r from-primary/5 to-accent/10 border-primary/20 shadow-soft max-w-2xl mx-auto">
             <CardContent className="p-8">
               <div className="flex justify-center mb-4">
