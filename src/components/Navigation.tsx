@@ -1,7 +1,17 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useSectionNavigator } from "@/hooks/navigateToSection";
-import { Menu, X, Home, Users, UserCheck, Phone } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Users,
+  UserCheck,
+  Phone,
+  FileChartColumn,
+  Container,
+  Files,
+} from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +21,10 @@ const Navigation = () => {
   const navItems = [
     { id: "/#home", label: "Inicio", icon: Home },
     { id: "/#about", label: "Nosotros", icon: Users },
-    { id: "/proyectos", label: "Proyectos", icon: Users },
-    { id: "/proveedores", label: "Proveedores", icon: Users },
-    // { id: "#services", label: "Servicios", icon: Settings },
+    { id: "/proyectos", label: "Proyectos", icon: FileChartColumn },
+    { id: "/proveedores", label: "Proveedores", icon: Container },
     { id: "#board", label: "Mesa Directiva", icon: UserCheck },
-    { id: "/documentos", label: "Documentos", icon: Users },
-
-    // { id: "#announcements", label: "Avisos", icon: Megaphone },
+    { id: "/documentos", label: "Documentos", icon: Files },
     { id: "#contact", label: "Contacto", icon: Phone },
   ];
 
