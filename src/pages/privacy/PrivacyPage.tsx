@@ -22,7 +22,6 @@ const PrivacyPage = () => {
           text: "Conoce Más",
           onClick: scrollPrivacy,
         }}
-        className="additional-section-classes"
       />
       <section id="privacy" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center my-16">
@@ -112,8 +111,8 @@ const PrivacyPage = () => {
             Para ejercer estos derechos, puede ponerse en contacto con la mesa
             directiva mediante los medios disponibles en este sitio web o
             escribiendo al correo electrónico:
-            <span className=" text-primary font-medium">
-              [correo@misionantigua.org]
+            <span className=" text-primary font-medium ml-1">
+              administracion@misionantigua.org
             </span>
             .
           </p>
@@ -131,7 +130,7 @@ const PrivacyPage = () => {
           </p>
         </section>
 
-        <p className="text-sm text-gray-600 text-right mt-6">
+        <p className="text-sm text-secondary font-bold text-right mt-6 mb-16">
           Última actualización: 7 de agosto de 2025
         </p>
       </section>

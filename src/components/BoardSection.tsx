@@ -6,42 +6,49 @@ const BoardSection = () => {
     {
       position: "Presidente",
       name: "Lic. Irma Aranda",
-      email: "presidente@misionantigua.com",
+      email: "presidencia@misionantigua.org",
       description:
         "Coordina las actividades generales de la comunidad y representa oficialmente al fraccionamiento.",
     },
     {
       position: "Secretario",
       name: "Ing. Jesus Ponce",
-      email: "secretario@misionantigua.com",
+      email: "secretaria@misionantigua.org",
       description:
         "Gestiona la documentación oficial y mantiene el registro de todas las sesiones del consejo.",
     },
     {
       position: "Tesorero",
       name: "Arq. Olivia Rosales ",
-      email: "tesorero@misionantigua.com",
+      email: "tesoreria@misionantigua.org",
       description:
         "Administra los recursos económicos y supervisa el cumplimiento del presupuesto comunitario.",
     },
     {
       position: "Vocal",
+      name: "C.P. Sandra Pérez ",
+      email: "sandra@misionantigua.org",
+      description:
+        "Apoyo a actividades varias de administración y vigilancia de actividades.",
+    },
+    {
+      position: "Vocal",
       name: "Ing. Alfredo Méndez",
-      email: "arturo@misionantigua.com",
+      email: "arturo@misionantigua.org",
       description:
         "Apoyo a actividades varias de administración y vigilancia de actividades.",
     },
     {
       position: "Representante de Vigilancia",
       name: "Mtra. Jeanet Rosales",
-      email: "vigilancia@misionantigua.com",
+      email: "vigilancia@misionantigua.org",
       description:
         "Supervisa las actividades del comité asegurando el cumplimiento de los reglamentos y procedimientos.",
     },
     {
       position: "Comité de comunicación",
       name: "R11",
-      email: "comunicacion@misionantigua.com",
+      email: "comunicacion@misionantigua.org",
       description:
         "Se encarga de difundir información importante para los vecinos y propietarios.",
     },
