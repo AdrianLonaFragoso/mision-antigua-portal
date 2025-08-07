@@ -11,17 +11,25 @@ import {
   FileChartColumn,
   Container,
   Files,
+  PartyPopper,
+  ChevronDown,
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [nosotrosDropDown, setNosotrosDropDown] = useState(false);
 
   const navigateToSection = useSectionNavigator(setIsOpen);
 
   const navItems = [
-    { id: "/#home", label: "Inicio", icon: Home },
-    { id: "/#about", label: "Nosotros", icon: Users },
     { id: "/proyectos", label: "Proyectos", icon: FileChartColumn },
+    { id: "/#announcements", label: "Avisos", icon: PartyPopper },
     { id: "/proveedores", label: "Proveedores", icon: Container },
     { id: "#board", label: "Mesa Directiva", icon: UserCheck },
     { id: "/documentos", label: "Documentos", icon: Files },
@@ -46,6 +54,35 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
+              <button
+                onClick={() => navigateToSection("/#home")}
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md"
+              >
+                Inicio
+              </button>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md">
+                  Nosotros
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-48">
+                  <DropdownMenuItem
+                    onClick={() => navigateToSection("/#about")}
+                  >
+                    Acerca de nosotros
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => navigateToSection("/proveedores")}
+                  >
+                    Proveedores
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigateToSection("#board")}>
+                    Mesa Directiva
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -55,6 +92,7 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
+
               <Button
                 variant="outline"
                 size="sm"
@@ -87,6 +125,48 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
+              <button
+                onClick={() => navigateToSection("/#home")}
+                className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
+              >
+                <Home className="mr-3 h-4 w-4" />
+                Inicio
+              </button>
+
+              <div>
+                <button
+                  className="flex items-center text-foreground px-3 py-2 text-base font-medium w-full text-left"
+                  onClick={() => setNosotrosDropDown((prev) => !prev)}
+                >
+                  <Users className="mr-3 h-4 w-4" />
+                  Nosotros
+                </button>
+                <div
+                  className={`pl-6 space-y-1 mt-1 ${
+                    nosotrosDropDown === false ? "hidden" : null
+                  }`}
+                >
+                  <button
+                    onClick={() => navigateToSection("/#about")}
+                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                  >
+                    Acerca de nosotros
+                  </button>
+                  <button
+                    onClick={() => navigateToSection("/proveedores")}
+                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                  >
+                    Proveedores
+                  </button>
+                  <button
+                    onClick={() => navigateToSection("#board")}
+                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                  >
+                    Mesa Directiva
+                  </button>
+                </div>
+              </div>
+
               {navItems.map((item) => {
                 const IconComponent = item.icon;
                 return (
