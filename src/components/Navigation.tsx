@@ -52,6 +52,7 @@ const Navigation = () => {
                 variant="outline"
                 size="sm"
                 className="ml-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                onClick={() => navigateToSection("/login")}
               >
                 Acceso Residentes
               </Button>

@@ -10,6 +10,7 @@ import ProjectsPage from "./pages/Projects/ProjectsPage";
 import SuppliersPage from "./pages/Suppliers/SuppliersPage";
 import DocumentsPage from "./pages/Documents/DocumentsPage";
 import PrivacyPage from "./pages/privacy/PrivacyPage";
+import LoginPage from "./pages/Login/LoginPage";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/proveedores" element={<SuppliersPage />} />
           <Route path="/documentos" element={<DocumentsPage />} />
           <Route path="/aviso-de-privacidad" element={<PrivacyPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
