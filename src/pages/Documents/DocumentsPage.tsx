@@ -4,10 +4,11 @@ import { heroSection } from "./constants";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import DocumentsSection from "./components/DocumentsSection";
 
-const RegulationsPage = () => {
-  const scrollToRegulations = () => {
-    const element = document.getElementById("regulations");
+const DocumentsPage = () => {
+  const scrollToDocuments = () => {
+    const element = document.getElementById("documents");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -20,10 +21,10 @@ const RegulationsPage = () => {
         description={heroSection.description}
         primaryButton={{
           text: "Conoce Más",
-          onClick: scrollToRegulations,
+          onClick: scrollToDocuments,
         }}
         secondaryButton={{
-          text: "Proponer proyecto",
+          text: "Tengo dudas?",
           onClick: () =>
             document
               .getElementById("contact")
@@ -31,12 +32,11 @@ const RegulationsPage = () => {
         }}
         className="additional-section-classes"
       />
-
-      <section className="min-h-screen bg-primary"></section>
+      <DocumentsSection />
       <ContactSection />
       <Footer />
     </div>
   );
 };
 
-export default RegulationsPage;
+export default DocumentsPage;
