@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { User, Mail, Phone } from "lucide-react";
+import { useState } from "react";
 
 const BoardSection = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const boardMembers = [
     {
       position: "Presidente",
@@ -54,6 +57,9 @@ const BoardSection = () => {
     },
   ];
 
+  // Determina qué miembros mostrar
+  const membersToShow = showAll ? boardMembers : boardMembers.slice(0, 3);
+
   return (
     <section
       id="board"
@@ -71,7 +77,7 @@ const BoardSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {boardMembers.map((member, index) => (
+          {membersToShow.map((member, index) => (
             <Card
               key={index}
               className="shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
@@ -109,6 +115,19 @@ const BoardSection = () => {
           ))}
         </div>
 
+        <div>
+          {boardMembers.length > 3 && (
+            <div className="text-center mt-8">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                {showAll ? "Ver menos" : "Ver todos"}
+              </button>
+            </div>
+          )}
+        </div>
+
         <div className="mt-16 text-center">
           <Card className="bg-gradient-to-r from-primary/5 to-accent/10 border-primary/20 shadow-soft max-w-4xl mx-auto">
             <CardContent className="p-8">
@@ -118,18 +137,17 @@ const BoardSection = () => {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Nuestro equipo directivo está siempre disponible para escuchar a
                 los residentes. Puedes contactar directamente al área
-                correspondiente o asistir a nuestras reuniones mensuales que se
-                realizan el primer sábado de cada mes.
+                correspondiente o asistir a nuestras reuniones mensuales.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <Phone className="h-4 w-4 mr-2 text-primary" />
                   <span>Reuniones: Primer sábado del mes</span>
-                </div>
-                <div className="flex items-center">
+                </div> */}
+                {/* <div className="flex items-center">
                   <Mail className="h-4 w-4 mr-2 text-primary" />
                   <span>Horario: 10:00 AM - Salón de Eventos</span>
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
