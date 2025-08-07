@@ -1,45 +1,46 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarDays, AlertCircle, Info, PartyPopper } from "lucide-react";
+import { Info, PartyPopper } from "lucide-react";
 
 const AnnouncementsSection = () => {
   const announcements = [
     {
       id: 1,
-      type: "important",
-      title: "Mantenimiento del Sistema Eléctrico",
-      date: "2024-02-15",
-      content:
-        "Se realizará mantenimiento preventivo del sistema eléctrico el próximo sábado 17 de febrero de 8:00 AM a 2:00 PM. Habrá cortes intermitentes de energía.",
-      icon: AlertCircle,
-    },
-    {
-      id: 2,
       type: "event",
-      title: "Celebración del Día del Niño",
-      date: "2024-02-20",
+      title: "Inicio de actividades nueva mesa directiva",
+      date: "2025-08-02",
       content:
-        "¡Acompáñanos a celebrar el Día del Niño! Tendremos actividades, juegos y sorpresas en el área de juegos. Evento familiar gratuito de 3:00 PM a 6:00 PM.",
+        "Presentamos oficialmente a los nuevos integrantes de la mesa directiva. Compartiremos planes, proyectos y formas de participación vecinal.",
       icon: PartyPopper,
     },
     {
-      id: 3,
-      type: "info",
-      title: "Nuevo Horario de Recolección de Basura",
-      date: "2024-02-10",
+      id: 2,
+      type: "important",
+      title: "Lanzamiento del portal de transparencia",
+      date: "2025-08-07",
       content:
-        "A partir del 1 de marzo, el servicio de recolección de basura será los días martes, jueves y sábados a las 7:00 AM. Por favor saca tus contenedores la noche anterior.",
-      icon: Info,
+        "Ya está disponible el nuevo portal con acceso exclusivo para colonos. Consulta facturas, proyectos, actas y reportes de forma segura y clara.",
+      icon: PartyPopper,
     },
-    {
-      id: 4,
-      type: "meeting",
-      title: "Asamblea General de Residentes",
-      date: "2024-03-02",
-      content:
-        "Te invitamos a la Asamblea General de Residentes que se realizará el primer sábado de marzo a las 10:00 AM en el salón de eventos. Temas importantes a tratar.",
-      icon: CalendarDays,
-    },
+
+    // {
+    //   id: 3,
+    //   type: "info",
+    //   title: "Nuevo Horario de Recolección de Basura",
+    //   date: "2024-02-10",
+    //   content:
+    //     "A partir del 1 de marzo, el servicio de recolección de basura será los días martes, jueves y sábados a las 7:00 AM. Por favor saca tus contenedores la noche anterior.",
+    //   icon: Info,
+    // },
+    // {
+    //   id: 4,
+    //   type: "meeting",
+    //   title: "Asamblea General de Residentes",
+    //   date: "2024-03-02",
+    //   content:
+    //     "Te invitamos a la Asamblea General de Residentes que se realizará el primer sábado de marzo a las 10:00 AM en el salón de eventos. Temas importantes a tratar.",
+    //   icon: CalendarDays,
+    // },
   ];
 
   const getTypeColor = (type: string) => {
