@@ -9,8 +9,8 @@ import {
   Camera,
   Car,
 } from "lucide-react";
-import securityImage from "@/assets/security-gate.jpg";
-import playgroundImage from "@/assets/playground.jpg";
+import securityImage from "@/assets/security-gate.webp";
+import playgroundImage from "@/assets/playground.webp";
 
 const ServicesSection = () => {
   const services = [
