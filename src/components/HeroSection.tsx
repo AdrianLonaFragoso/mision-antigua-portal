@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import heroImage from "@/assets/hero-neighborhood.jpg";
-import heroImageNight from "@/assets/hero-neighborhood-night.jpg";
+import heroImage from "@/assets/hero-neighborhood.webp";
+import heroImageNight from "@/assets/hero-neighborhood-night.webp";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
