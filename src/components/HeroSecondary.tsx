@@ -20,7 +20,7 @@ interface HeroSecondaryProps {
 const HeroSecondary = ({
   title,
   description,
-  background = "/atardecer-mision-antigua.jpg",
+  background = "/atardecer-mision-antigua.webp",
   primaryButton,
   secondaryButton,
   className = "",
