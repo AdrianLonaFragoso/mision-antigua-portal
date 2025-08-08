@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-neighborhood.webp";
-import heroImageNight from "@/assets/hero-neighborhood-night.webp";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -13,28 +12,6 @@ const HeroSection = () => {
   };
 
   const [currentImage, setCurrentImage] = useState(heroImage);
-
-  useEffect(() => {
-    const checkTimeAndUpdateImage = () => {
-      const now = new Date();
-
-      const hours = now.getHours();
-
-      if (hours >= 19 || hours < 6) {
-        // 7 PM a 6 AM
-        setCurrentImage(heroImageNight);
-      } else {
-        setCurrentImage(heroImage);
-      }
-    };
-
-    // Ejecutar al montar el componente
-    checkTimeAndUpdateImage();
-
-    // const interval = setInterval(checkTimeAndUpdateImage, 60000);
-
-    // return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
