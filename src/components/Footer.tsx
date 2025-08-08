@@ -2,9 +2,9 @@ import {
   MapPin,
   Phone,
   Mail,
-  Facebook,
-  Instagram,
-  Twitter,
+  // Facebook,
+  // Instagram,
+  // Twitter,
 } from "lucide-react";
 
 const Footer = () => {
@@ -33,7 +33,7 @@ const Footer = () => {
               bienestar y la calidad de vida de nuestros residentes. Viviendo
               con sentido de comunidad.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a
                 href="#"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors duration-300"
@@ -55,7 +55,7 @@ const Footer = () => {
               >
                 <Twitter className="h-5 w-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
