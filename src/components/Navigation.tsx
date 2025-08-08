@@ -30,8 +30,6 @@ const Navigation = () => {
   const navItems = [
     { id: "/proyectos", label: "Proyectos", icon: FileChartColumn },
     { id: "/#announcements", label: "Avisos", icon: PartyPopper },
-    { id: "/proveedores", label: "Proveedores", icon: Container },
-    { id: "#board", label: "Mesa Directiva", icon: UserCheck },
     { id: "/documentos", label: "Documentos", icon: Files },
     { id: "#contact", label: "Contacto", icon: Phone },
   ];
@@ -72,9 +70,7 @@ const Navigation = () => {
                   >
                     Acerca de nosotros
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => navigateToSection("/proveedores")}
-                  >
+                  <DropdownMenuItem onClick={() => navigateToSection("/login")}>
                     Proveedores
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigateToSection("#board")}>
@@ -153,7 +149,7 @@ const Navigation = () => {
                     Acerca de nosotros
                   </button>
                   <button
-                    onClick={() => navigateToSection("/proveedores")}
+                    onClick={() => navigateToSection("/login")}
                     className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
                   >
                     Proveedores

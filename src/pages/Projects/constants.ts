@@ -13,7 +13,7 @@ export const projectsSection = [
     description:
       "Instalación de cámaras de circuito cerrado (CCTV) en puntos estratégicos del fraccionamiento y mejora de la iluminación pública.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "/login",
     buttonText: "Ver proyecto",
   },
   {
@@ -21,7 +21,7 @@ export const projectsSection = [
     description:
       "Sustitución y mantenimiento de luminarias en mal estado para mejorar la iluminación y seguridad del fraccionamiento.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -29,7 +29,7 @@ export const projectsSection = [
     description:
       "Rehabilitación de pavimentos, banquetas y guarniciones, incluyendo rampas accesibles y señalética peatonal (basado en proyectos similares de rehabilitación vial en comunidades de Querétaro)",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -37,7 +37,7 @@ export const projectsSection = [
     description:
       "Implementación de un sistema automatizado para el portón, según lo acordado en la última asamblea vecinal.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -45,7 +45,7 @@ export const projectsSection = [
     description:
       "Mantenimiento correctivo y preventivo de la caseta de vigilancia",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -53,7 +53,7 @@ export const projectsSection = [
     description:
       "Diseño e implementación de un reglamento de tránsito interno para mejorar la convivencia y seguridad vial.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -61,7 +61,7 @@ export const projectsSection = [
     description:
       "Transformación de zonas áridas o sin uso en espacios funcionales, minimizando focos de infección y plagas.",
     imageUrl: areaSeca,
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -69,7 +69,7 @@ export const projectsSection = [
     description:
       "Adición de luces al árbol seco, para mejorar la vista del área verde en la noche",
     imageUrl: arbolSeco,
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -77,7 +77,7 @@ export const projectsSection = [
     description:
       "Limpieza, reforestación y mantenimiento de las áreas verdes que se encuentran en estado de abandono.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -85,7 +85,7 @@ export const projectsSection = [
     description:
       "Reparación y mejora del área de juegos para garantizar la seguridad y diversión de los más pequeños.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -93,7 +93,7 @@ export const projectsSection = [
     description:
       "Programación de torneos, clases y eventos deportivos para todas las edades, promoviendo la vida activa y saludable.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -101,7 +101,7 @@ export const projectsSection = [
     description:
       "Organización de actividades sociales y culturales que fomenten la convivencia y el sentido de comunidad.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -109,7 +109,7 @@ export const projectsSection = [
     description:
       "Creación de una red de apoyo entre vecinos emprendedores para impulsar el comercio local y colaboraciones.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
   {
@@ -117,7 +117,7 @@ export const projectsSection = [
     description:
       "Creación de un padrón oficial de mascotas para fomentar la tenencia responsable y facilitar su identificación.",
     imageUrl: "https://placehold.co/920x613?text=Proyecto",
-    link: "#",
+    link: "login",
     buttonText: "Ver proyecto",
   },
 ];
