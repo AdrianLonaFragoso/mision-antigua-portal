@@ -31,11 +31,9 @@ const HeroSection = () => {
     // Ejecutar al montar el componente
     checkTimeAndUpdateImage();
 
-    // Opcional: Actualizar cada minuto para cambios en tiempo real
-    const interval = setInterval(checkTimeAndUpdateImage, 60000);
+    // const interval = setInterval(checkTimeAndUpdateImage, 60000);
 
-    // Limpiar intervalo al desmontar
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, []);
 
   return (
