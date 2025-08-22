@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import heroImage from "@/assets/hero-neighborhood.webp";
-import { useState } from "react";
+import heroImageDay from "@/assets/hero-neighborhood.webp";
+import heroImageNight from "@/assets/hero-neighborhood-night.webp";
+import { HeroImage } from "./HeroImage";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -11,8 +12,6 @@ const HeroSection = () => {
     }
   };
 
-  const [currentImage, setCurrentImage] = useState(heroImage);
-
   return (
     <section
       id="home"
@@ -20,10 +19,9 @@ const HeroSection = () => {
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={currentImage}
-          alt="Misión Antigua Neighborhood"
-          className="w-full h-full object-cover"
+        <HeroImage
+          heroImageDay={heroImageDay}
+          heroImageNight={heroImageNight}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent"></div>
       </div>
