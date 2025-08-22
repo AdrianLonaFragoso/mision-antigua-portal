@@ -6,10 +6,8 @@ import {
   X,
   Home,
   Users,
-  UserCheck,
   Phone,
   FileChartColumn,
-  Container,
   Files,
   PartyPopper,
   ChevronDown,
@@ -20,18 +18,41 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import LoginButton from "./LoginButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navigation = () => {
+  const { isAuthenticated } = useAuth0();
   const [isOpen, setIsOpen] = useState(false);
   const [nosotrosDropDown, setNosotrosDropDown] = useState(false);
 
   const navigateToSection = useSectionNavigator(setIsOpen);
 
   const navItems = [
-    { id: "/proyectos", label: "Proyectos", icon: FileChartColumn },
-    { id: "/#announcements", label: "Avisos", icon: PartyPopper },
-    { id: "/documentos", label: "Documentos", icon: Files },
-    { id: "#contact", label: "Contacto", icon: Phone },
+    {
+      id: "/proyectos",
+      label: "Proyectos",
+      icon: FileChartColumn,
+      requiresAuth: true,
+    },
+    {
+      id: "/#announcements",
+      label: "Avisos",
+      icon: PartyPopper,
+      requiresAuth: true,
+    },
+    {
+      id: "/documentos",
+      label: "Documentos",
+      icon: Files,
+      requiresAuth: true,
+    },
+    {
+      id: "#contact",
+      label: "Contacto",
+      icon: Phone,
+      requiresAuth: false,
+    },
   ];
 
   return (
@@ -70,33 +91,36 @@ const Navigation = () => {
                   >
                     Acerca de nosotros
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigateToSection("/login")}>
-                    Proveedores
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigateToSection("#board")}>
-                    Mesa Directiva
-                  </DropdownMenuItem>
+                  {isAuthenticated && (
+                    <DropdownMenuItem
+                      onClick={() => navigateToSection("/login")}
+                    >
+                      Proveedores
+                    </DropdownMenuItem>
+                  )}
+                  {isAuthenticated && (
+                    <DropdownMenuItem
+                      onClick={() => navigateToSection("#board")}
+                    >
+                      Mesa Directiva
+                    </DropdownMenuItem>
+                  )}
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => navigateToSection(item.id)}
-                  className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {navItems.map((item) =>
+                isAuthenticated || !item.requiresAuth ? (
+                  <button
+                    key={item.id}
+                    onClick={() => navigateToSection(item.id)}
+                    className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:bg-accent rounded-md"
+                  >
+                    {item.label}
+                  </button>
+                ) : null
+              )}
 
-              <Button
-                variant="outline"
-                size="sm"
-                className="ml-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                onClick={() => navigateToSection("/login")}
-              >
-                Acceso Residentes
-              </Button>
+              <LoginButton />
             </div>
           </div>
 
@@ -148,42 +172,38 @@ const Navigation = () => {
                   >
                     Acerca de nosotros
                   </button>
-                  <button
-                    onClick={() => navigateToSection("/login")}
-                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
-                  >
-                    Proveedores
-                  </button>
-                  <button
-                    onClick={() => navigateToSection("#board")}
-                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
-                  >
-                    Mesa Directiva
-                  </button>
+                  {isAuthenticated && (
+                    <button
+                      onClick={() => navigateToSection("/login")}
+                      className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                    >
+                      Proveedores
+                    </button>
+                  )}
+                  {isAuthenticated && (
+                    <button
+                      onClick={() => navigateToSection("#board")}
+                      className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                    >
+                      Mesa Directiva
+                    </button>
+                  )}
                 </div>
               </div>
-
-              {navItems.map((item) => {
-                const IconComponent = item.icon;
-                return (
+              {navItems.map((item) =>
+                isAuthenticated || !item.requiresAuth ? (
                   <button
                     key={item.id}
                     onClick={() => navigateToSection(item.id)}
                     className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
                   >
-                    <IconComponent className="mr-3 h-4 w-4" />
+                    {item.icon && <item.icon className="mr-3 h-4 w-4" />}
                     {item.label}
                   </button>
-                );
-              })}
+                ) : null
+              )}
               <div className="pt-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                >
-                  Acceso Residentes
-                </Button>
+                <LoginButton />
               </div>
             </div>
           </div>
