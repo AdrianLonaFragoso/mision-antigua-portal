@@ -149,10 +149,10 @@ const ContactSection = () => {
                       Correo Electrónico
                     </h4>
                     <p className="text-muted-foreground">
-                      administracion@misionantigua.com
+                      administracion@misionantigua.org
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      comunicacion@misionantigua.com
+                      comunicacion@misionantigua.org
                     </p>
                   </div>
                 </div>
