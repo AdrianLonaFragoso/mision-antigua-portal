@@ -125,7 +125,7 @@ const AnnouncementsModal = () => {
             }
           >
             <h2 className="text-md font-bold text-secondary">
-              Convocatoria asamblea general
+              Informe de vecinos Misión Antigua
             </h2>
             <img
               src="/comunicado.png"
@@ -138,7 +138,7 @@ const AnnouncementsModal = () => {
               fraccionamiento.
             </p>
             <Button variant="outline" className="w-full">
-              Leer Convocatoria
+              Leer Informe
             </Button>
           </article>
         </div>
