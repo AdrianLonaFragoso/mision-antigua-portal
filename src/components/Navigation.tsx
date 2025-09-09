@@ -22,7 +22,7 @@ import LoginButton from "./LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navigation = () => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   const [isOpen, setIsOpen] = useState(false);
   const [nosotrosDropDown, setNosotrosDropDown] = useState(false);
 

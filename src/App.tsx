@@ -11,6 +11,8 @@ import SuppliersPage from "./pages/Suppliers/SuppliersPage";
 import DocumentsPage from "./pages/Documents/DocumentsPage";
 import PrivacyPage from "./pages/privacy/PrivacyPage";
 import LoginPage from "./pages/Login/LoginPage";
+import ProfilePage from "./pages/Profile/ProfilePage";
+import ColorPalettePage from "./pages/ColorPalette/ColorPalettePage";
 
 const queryClient = new QueryClient();
 
@@ -27,9 +29,9 @@ const App = () => (
           <Route path="/proveedores" element={<SuppliersPage />} />
           <Route path="/documentos" element={<DocumentsPage />} />
           <Route path="/aviso-de-privacidad" element={<PrivacyPage />} />
+          <Route path="/perfil" element={<ProfilePage />} />
+          <Route path="/colores" element={<ColorPalettePage />} />
           <Route path="/login" element={<LoginPage />} />
-
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
