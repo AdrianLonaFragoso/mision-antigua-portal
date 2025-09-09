@@ -102,7 +102,7 @@ const AnnouncementsModal = () => {
               Reglamento del Fraccionamiento
             </h2>
             <img
-              src="src/assets/reglamento.png"
+              src="/reglamento.png"
               alt="Reglamento"
               className="h-[200px] lg:h-[300px] mx-auto mb-3"
             />
@@ -128,7 +128,7 @@ const AnnouncementsModal = () => {
               Convocatoria asamblea general
             </h2>
             <img
-              src="src/assets/comunicado.png"
+              src="/comunicado.png"
               alt="Convocatoria"
               className="h-[200px] lg:h-[300px] mx-auto mb-3"
             />
