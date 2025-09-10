@@ -51,8 +51,12 @@ const AnnouncementsModal = () => {
       className={`bg-black/50 fixed inset-0 z-50 flex items-center justify-center px-3 ${
         open ? "block" : "hidden"
       }`}
+      onClick={() => setOpen(false)}
     >
-      <article className="bg-white rounded-lg shadow-lg min-h-[400px] lg:min-w-[600px] max-w-[800px] p-6 relative h-[90vh] lg:h-auto overflow-auto lg:overflow-hidden">
+      <article
+        className="bg-white rounded-lg shadow-lg min-h-[400px] lg:min-w-[600px] max-w-[800px] p-6 relative h-[90vh] lg:h-auto overflow-auto lg:overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
         <X
           className="h-6 w-6 absolute top-4 right-4 cursor-pointer"
           onClick={() => setOpen(false)}
