@@ -133,9 +133,9 @@ const AnnouncementsModal = () => {
               className="h-[200px] lg:h-[300px] mx-auto mb-3"
             />
             <p className="text-sm text-muted-foreground mb-4">
-              Se convoca a la asamblea general de los residentes del
-              fraccionamiento para discutir y votar sobre el reglamento del
-              fraccionamiento.
+              Este informe es el reslutado de la entrega de la documentación
+              solicitada por los vecinos de la comunidad Misión Antigua y el
+              estatus actual de dicha entrega.
             </p>
             <Button variant="outline" className="w-full">
               Leer Informe
