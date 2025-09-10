@@ -59,7 +59,7 @@ const AnnouncementsModal = () => {
         />
         <h1 className="text-xl lg:text-2xl font-bold text-secondary text-center">
           Anuncio Importante <br />
-          Proxima Asamblea General <br />
+          Próxima Asamblea General <br />
           <span className="text-primary">27 de septiembre 2025 | 9:00 AM</span>
         </h1>
         <div className="flex flex-wrap gap-2 justify-center items-baseline my-4">
