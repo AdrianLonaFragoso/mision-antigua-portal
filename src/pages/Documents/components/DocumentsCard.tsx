@@ -31,7 +31,7 @@ const DocumentsCard: React.FC<RegulationCardProps> = ({
       <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
         {description}
       </p>
-      <ul className="my-4 space-y-3">
+      <ul className="my-4 space-y-3 max-h-64 overflow-y-auto pr-1">
         {documents.map((doc, index) => (
           <li key={index}>
             <a
@@ -49,9 +49,15 @@ const DocumentsCard: React.FC<RegulationCardProps> = ({
           </li>
         ))}
       </ul>
+      {documents.length > 6 && (
+        <div className="mt-2 flex items-center justify-center text-xs text-gray-500 dark:text-gray-400">
+          <span className="mr-1">Hay más documentos</span>
+          <span aria-hidden>↓</span>
+        </div>
+      )}
       <div>
         <a
-          href="#"
+          href="/#contact"
           className="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400"
         >
           <svg
