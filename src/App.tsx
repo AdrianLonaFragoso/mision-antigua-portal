@@ -13,6 +13,7 @@ import PrivacyPage from "./pages/privacy/PrivacyPage";
 import LoginPage from "./pages/Login/LoginPage";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import ColorPalettePage from "./pages/ColorPalette/ColorPalettePage";
+import ProjectInfo from "./pages/Projects/ProjectInfo";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/perfil" element={<ProfilePage />} />
           <Route path="/colores" element={<ColorPalettePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/proyecto" element={<ProjectInfo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
