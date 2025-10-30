@@ -8,7 +8,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
 // import UserMetadata from "@/components/UserMetadata";
-import AnnouncementsModal from "@/components/AnnouncementsModal";
+// import AnnouncementsModal from "@/components/AnnouncementsModal";
 
 const Index = () => {
   const { isAuthenticated, user } = useAuth0();
@@ -24,7 +24,7 @@ const Index = () => {
       {/* <UserMetadata /> */}
       <ContactSection />
       <Footer />
-      <AnnouncementsModal />
+      {/* <AnnouncementsModal /> */}
     </div>
   );
 };
