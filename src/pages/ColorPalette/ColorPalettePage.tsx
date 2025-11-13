@@ -1,28 +1,21 @@
-import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import ColorCard from "./components/ColorCard";
-import HeroSecondary from "@/components/HeroSecondary";
-import { heroSection } from "./constants";
+
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import NavigationApp from "@/components/NavigationApp";
 
 const ColorPalettePage = () => {
   return (
     <>
-      <Navigation />
-      <HeroSecondary
-        title={heroSection.title}
-        description={heroSection.description}
-        primaryButton={{
-          text: "Conoce Más",
-          className: "hidden",
-        }}
-        secondaryButton={{
-          text: "Proponer proveedor",
-          className: "hidden",
-        }}
-        className="additional-section-classes"
-      />
+      <NavigationApp />
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-semibold mb-6">Muestras de color</h1>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Muestras de color
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
         <div className="grid gap-6 lg:grid-cols-4">
           <ColorCard
             code="CW030"
@@ -100,6 +93,8 @@ const ColorPalettePage = () => {
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 };

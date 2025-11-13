@@ -1,8 +1,15 @@
 {
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "app.misionantigua.org"
+        }
+      ],
+      "destination": "/app",
+      "permanent": false
     }
   ]
 }
