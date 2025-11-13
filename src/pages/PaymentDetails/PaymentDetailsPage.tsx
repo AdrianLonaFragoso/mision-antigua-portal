@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const PaymentDetailsPage = () => {
+  const { toast } = useToast();
   const details = [
     { label: "Banco", value: "Banco Bancrea" },
     {
@@ -22,8 +24,35 @@ const PaymentDetailsPage = () => {
     { label: "CLABE", value: "152680120000549405" },
   ];
 
-  const copy = (text: string) => {
-    navigator.clipboard?.writeText(text);
+  const copy = async (text: string, label?: string) => {
+    try {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        const selection = document.getSelection();
+        const selected = selection ? selection.rangeCount > 0 ? selection.getRangeAt(0) : null : null;
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        if (selected && selection) {
+          selection.removeAllRanges();
+          selection.addRange(selected);
+        }
+      }
+      toast({ title: "Copiado", description: `${label ?? "Dato"} copiado al portapapeles` });
+    } catch (e) {
+      toast({
+        title: "No se pudo copiar",
+        description: "Intenta manualmente seleccionando el texto",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -63,7 +92,7 @@ const PaymentDetailsPage = () => {
                           variant="outline"
                           size="icon"
                           aria-label={`Copiar ${item.label}`}
-                          onClick={() => copy(item.value)}
+                          onClick={() => copy(item.value, item.label)}
                           title="Copiar"
                         >
                           <Copy />
