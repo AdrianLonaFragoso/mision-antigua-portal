@@ -56,9 +56,10 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <>
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button onClick={() => navigateToSection("#home")}>
@@ -124,92 +125,106 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
-              <button
-                onClick={() => navigateToSection("/#home")}
-                className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsOpen(!isOpen)}
+                className="inline-flex items-center justify-center p-2"
               >
-                <Home className="mr-3 h-4 w-4" />
-                Inicio
-              </button>
-
-              <div>
-                <button
-                  className="flex items-center text-foreground px-3 py-2 text-base font-medium w-full text-left"
-                  onClick={() => setNosotrosDropDown((prev) => !prev)}
-                >
-                  <Users className="mr-3 h-4 w-4" />
-                  Nosotros
-                </button>
-                <div
-                  className={`pl-6 space-y-1 mt-1 ${
-                    nosotrosDropDown === false ? "hidden" : null
-                  }`}
-                >
-                  <button
-                    onClick={() => navigateToSection("/#about")}
-                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
-                  >
-                    Acerca de nosotros
-                  </button>
-                  {isAuthenticated && (
-                    <button
-                      onClick={() => navigateToSection("/login")}
-                      className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
-                    >
-                      Proveedores
-                    </button>
-                  )}
-                  {isAuthenticated && (
-                    <button
-                      onClick={() => navigateToSection("#board")}
-                      className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
-                    >
-                      Mesa Directiva
-                    </button>
-                  )}
-                </div>
-              </div>
-              {navItems.map((item) =>
-                isAuthenticated || !item.requiresAuth ? (
-                  <button
-                    key={item.id}
-                    onClick={() => navigateToSection(item.id)}
-                    className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
-                  >
-                    {item.icon && <item.icon className="mr-3 h-4 w-4" />}
-                    {item.label}
-                  </button>
-                ) : null
-              )}
-              <div className="pt-2">
-                <LoginButton />
-              </div>
+                {isOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </Button>
             </div>
           </div>
-        )}
+
+          {/* Mobile Navigation */}
+          {isOpen && (
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
+                <button
+                  onClick={() => navigateToSection("/#home")}
+                  className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
+                >
+                  <Home className="mr-3 h-4 w-4" />
+                  Inicio
+                </button>
+
+                <div>
+                  <button
+                    className="flex items-center text-foreground px-3 py-2 text-base font-medium w-full text-left"
+                    onClick={() => setNosotrosDropDown((prev) => !prev)}
+                  >
+                    <Users className="mr-3 h-4 w-4" />
+                    Nosotros
+                  </button>
+                  <div
+                    className={`pl-6 space-y-1 mt-1 ${
+                      nosotrosDropDown === false ? "hidden" : null
+                    }`}
+                  >
+                    <button
+                      onClick={() => navigateToSection("/#about")}
+                      className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                    >
+                      Acerca de nosotros
+                    </button>
+                    {isAuthenticated && (
+                      <button
+                        onClick={() => navigateToSection("/login")}
+                        className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                      >
+                        Proveedores
+                      </button>
+                    )}
+                    {isAuthenticated && (
+                      <button
+                        onClick={() => navigateToSection("#board")}
+                        className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-sm font-medium w-full text-left rounded-md transition-all duration-300"
+                      >
+                        Mesa Directiva
+                      </button>
+                    )}
+                  </div>
+                </div>
+                {navItems.map((item) =>
+                  isAuthenticated || !item.requiresAuth ? (
+                    <button
+                      key={item.id}
+                      onClick={() => navigateToSection(item.id)}
+                      className="flex items-center text-foreground hover:text-primary hover:bg-accent px-3 py-2 text-base font-medium w-full text-left rounded-md transition-all duration-300"
+                    >
+                      {item.icon && <item.icon className="mr-3 h-4 w-4" />}
+                      {item.label}
+                    </button>
+                  ) : null
+                )}
+                <div className="pt-2">
+                  <LoginButton />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* Floating mobile-only CTA */}
+      <div className="sm:hidden fixed bottom-4 right-4 z-50">
+        <Button
+          onClick={() => navigateToSection("/app")}
+          className="rounded-full shadow-lg gap-2"
+          aria-label="Ir a la APP"
+          title="Ir a la APP"
+        >
+          <Phone className="h-5 w-5" />
+          Ir a la APP
+        </Button>
       </div>
-    </nav>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ const PaymentDetailsPage = () => {
   const details = [
     { label: "Banco", value: "Banco Bancrea" },
     {
-      label: "Titular de la cuenta",
+      label: "Titular",
       value: "ASOCIACIÓN DE COLONOS FRACCIONAMIENTO MISIÓN ANTIGUA",
     },
     {
@@ -20,13 +20,16 @@ const PaymentDetailsPage = () => {
     },
     { label: "RFC", value: "ACF211027IS1" },
     { label: "Producto", value: "SOY BANCREA EMPRESARIAL" },
-    { label: "Número de cuenta", value: "12000054940" },
+    { label: "# cuenta", value: "12000054940" },
     { label: "CLABE", value: "152680120000549405" },
   ];
 
   const copy = async (text: string, label?: string) => {
     try {
-      if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      if (
+        navigator.clipboard &&
+        typeof navigator.clipboard.writeText === "function"
+      ) {
         await navigator.clipboard.writeText(text);
       } else {
         const textarea = document.createElement("textarea");
@@ -36,7 +39,11 @@ const PaymentDetailsPage = () => {
         textarea.style.left = "-9999px";
         document.body.appendChild(textarea);
         const selection = document.getSelection();
-        const selected = selection ? selection.rangeCount > 0 ? selection.getRangeAt(0) : null : null;
+        const selected = selection
+          ? selection.rangeCount > 0
+            ? selection.getRangeAt(0)
+            : null
+          : null;
         textarea.select();
         document.execCommand("copy");
         document.body.removeChild(textarea);
@@ -45,7 +52,10 @@ const PaymentDetailsPage = () => {
           selection.addRange(selected);
         }
       }
-      toast({ title: "Copiado", description: `${label ?? "Dato"} copiado al portapapeles` });
+      toast({
+        title: "Copiado",
+        description: `${label ?? "Dato"} copiado al portapapeles`,
+      });
     } catch (e) {
       toast({
         title: "No se pudo copiar",
@@ -79,7 +89,7 @@ const PaymentDetailsPage = () => {
                       key={item.label}
                       className="flex items-start justify-between gap-4 border-b pb-4 last:border-none"
                     >
-                      <div className="min-w-40 text-muted-foreground">
+                      <div className="min-w-32 text-muted-foreground">
                         {item.label}
                       </div>
                       <div className="flex-1">
