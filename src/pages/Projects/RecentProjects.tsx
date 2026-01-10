@@ -83,17 +83,7 @@ const RecentProjects = () => {
             </p>
           </div>
 
-          {/* Video Section */}
-          <div className="mb-16 rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto border-4 border-white">
-            <video 
-              controls 
-              className="w-full aspect-video object-cover"
-              poster="/proyectos/1.jpeg" // Optional: using first image as poster
-            >
-              <source src="/proyectos/17.mp4" type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
-          </div>
+
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {images.map((img, idx) => (
