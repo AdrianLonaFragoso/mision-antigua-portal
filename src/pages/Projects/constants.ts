@@ -10,6 +10,14 @@ export const heroSection = {
 
 export const projectsSection = [
   {
+    title: "Avances Recientes",
+    description:
+      "Consulta la galería de fotos y videos de los últimos trabajos y mejoras realizados en nuestro fraccionamiento.",
+    imageUrl: "/proyectos/1.jpeg",
+    link: "/recent-projects",
+    buttonText: "Ver avances",
+  },
+  {
     title: "Recuperación de la caseta de vigilancia",
     description:
       "Mantenimiento correctivo y preventivo de la caseta de vigilancia",

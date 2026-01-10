@@ -3,6 +3,7 @@ import { ArrowDown } from "lucide-react";
 import heroImageDay from "@/assets/hero-neighborhood.webp";
 import heroImageNight from "@/assets/hero-neighborhood-night.webp";
 import { HeroImage } from "./HeroImage";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   Dialog,
@@ -15,6 +16,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const HeroSectionEvent = () => {
+  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState<{
     days: number;
     hours: number;
@@ -180,11 +182,20 @@ const HeroSectionEvent = () => {
           <Button
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto border-2 border-green-500 bg-green-600 text-white hover:bg-green-700 hover:border-green-600 transition-all duration-300 px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-2"
+            className="w-full sm:w-auto bg-white text-blue-600 border-white hover:bg-gray-100 transition-all duration-300 px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-2"
             onClick={() => window.open('https://meet.google.com/tcw-makx-sin', '_blank')}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-video"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+            <img src="/glogo.png" alt="Google Logo" className="w-6 h-6" />
             Unirse por Google Meet
+          </Button>
+
+          <Button
+            size="lg"
+            className="w-full sm:w-auto bg-cyan-600 text-white hover:bg-cyan-700 transition-all duration-300 px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-2"
+            onClick={() => navigate('/recent-projects')}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-images"><path d="M18 22H4a2 2 0 0 1-2-2V6"/><path d="m22 13-1.296-1.296a2.41 2.41 0 0 0-3.408 0L11 18"/><circle cx="12" cy="8" r="2"/><rect width="16" height="16" x="6" y="2" rx="2"/></svg>
+            Últimos proyectos
           </Button>
         </div>
       </div>

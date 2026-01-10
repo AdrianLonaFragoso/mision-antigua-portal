@@ -14,6 +14,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import ColorPalettePage from "./pages/ColorPalette/ColorPalettePage";
 import ProjectInfo from "./pages/Projects/ProjectInfo";
+import RecentProjects from "./pages/Projects/RecentProjects";
 import MiniApp from "./pages/MiniApp/MiniApp";
 import AnnouncementsPage from "./pages/Announcements/AnnouncementsPage";
 import PaymentDetailsPage from "./pages/PaymentDetails/PaymentDetailsPage";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/colores" element={<ColorPalettePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/proyecto" element={<ProjectInfo />} />
+          <Route path="/recent-projects" element={<RecentProjects />} />
           <Route path="/app" element={<MiniApp />} />
           <Route path="/anuncios" element={<AnnouncementsPage />} />
           <Route path="/pago" element={<PaymentDetailsPage />} />
