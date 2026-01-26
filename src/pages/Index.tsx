@@ -11,9 +11,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 // import UserMetadata from "@/components/UserMetadata";
 // import AnnouncementsModal from "@/components/AnnouncementsModal";
 
-
 // Flag to toggle between default Hero and Event Hero
-const SHOW_EVENT_HERO = true;
+const SHOW_EVENT_HERO = false;
 
 const Index = () => {
   const { isAuthenticated, user } = useAuth0();
